@@ -1,23 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-<<<<<<< HEAD
 import LoginUsuarioView from '../views/LoginUsuarioView.vue'
 import VistaClienteView from '../views/VistaClienteView.vue'
+import HomeView from '../views/HomeView.vue'
 
 import MisVehiculosView from '@/views/MisVehiculosView.vue'
 import PerfilView from '@/views/PerfilView.vue'
 import DetalleDeMisOrdenesView from '@/views/DetalleDeMisOrdenesView.vue'
 
-=======
-import HomeView from '../views/HomeView.vue'
-import LoginUsuarioView from '../views/LoginUsuarioView.vue'
-import VistaClienteView from '../views/VistaClienteView.vue'
->>>>>>> 0a9462cf67b4e995cbcbe02f6b90c1a0e1a8e1b1
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-<<<<<<< HEAD
-=======
       path: '/',
       name: 'home',
       component: HomeView
@@ -31,7 +24,6 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
->>>>>>> 0a9462cf67b4e995cbcbe02f6b90c1a0e1a8e1b1
       path: '/LoginUsuario',
       name: 'LoginUsuario',
       component: LoginUsuarioView
@@ -39,7 +31,6 @@ const router = createRouter({
     {
       path: '/VistaCliente',
       name: 'VistaCliente',
-<<<<<<< HEAD
       component: VistaClienteView,
       children:[
         {
@@ -58,9 +49,6 @@ const router = createRouter({
           component: DetalleDeMisOrdenesView
         }
     ]
-=======
-      component: VistaClienteView
->>>>>>> 0a9462cf67b4e995cbcbe02f6b90c1a0e1a8e1b1
     }
   ]
 })

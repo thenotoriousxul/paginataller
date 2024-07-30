@@ -1,6 +1,21 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useProfileStore } from '@/stores/counter';
+
 const tipoPersona = ref(['Fisico','Moral'])
+const seleccionTipoPersona = ref('')
+
+const store = useProfileStore()
+
+const title = computed ({
+    get: () => store.title, // Obtén el valor actual del título desde la tienda
+    set: (newTitle) => store.setTitle(newTitle) // Actualiza el título en la tienda
+})
+
+function Agregar() {
+    console.log('Clickeado')
+}
+
 </script>
 
 <template>
@@ -8,13 +23,23 @@ const tipoPersona = ref(['Fisico','Moral'])
         <div class="first-container">
             <v-card class="card">  
                 <v-card-title id="card-title">Perfil</v-card-title>
-                <div class="contenido-datos-personales">
+                <div>
                     <v-col>
                         <v-row>
                             <v-col>
+
                                 <v-card-text>Nombre Completo</v-card-text>
-                                <v-text-field variant="solo"></v-text-field>
+                                <v-text-field variant="solo" v-model="title"></v-text-field>
+                                
                             </v-col>
+                            <v-col>
+                                <v-card-text>Teléfono</v-card-text>
+                                <v-text-field variant="solo"></v-text-field>   
+                            </v-col>
+                            
+                        </v-row>
+
+                        <v-row>
                             <v-col>
                                 <v-card-text> Direccion</v-card-text>       
                                 <v-text-field variant="solo"></v-text-field>   
@@ -23,29 +48,23 @@ const tipoPersona = ref(['Fisico','Moral'])
 
                         <v-row>
                             <v-col>
-                                <v-card-text>Teléfono</v-card-text>
-                                <v-text-field variant="solo"></v-text-field>   
+                                <v-card-text >Tipo De Cliente</v-card-text>
+                                <v-select variant="solo" :items="tipoPersona" density="default" label="Persona" v-model="seleccionTipoPersona"> </v-select>                               
+                            
+                                <v-card-text v-if="seleccionTipoPersona === 'Moral'">Nombre De la Empresa</v-card-text>
+                                <v-text-field variant="solo" v-if="seleccionTipoPersona === 'Moral'" > </v-text-field>  
                             </v-col>
                         </v-row>
 
-                        <v-row>
-                            <v-col>
-                                <v-card-text>Tipo De Cliente</v-card-text>
-                                <v-select variant="solo" :items="tipoPersona" density="default" label="Persona"> </v-select>
-                            </v-col>
-                        </v-row>
+                        <!-- btn -->
                         <v-row>
                             <v-col>
                                 <v-btn id="btn-agregar" @click="Agregar">Agregar</v-btn>
                             </v-col>
                         </v-row>
-                        
+                    </v-col>
 
-                </v-col>
-
-                    
                 </div>
-                
                 
             </v-card>
         </div>
@@ -54,28 +73,24 @@ const tipoPersona = ref(['Fisico','Moral'])
 </template>
 <style scoped>
 .first-container{
-    height: 100vh;
-    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
 }
+
 .card{
+    grid-column: 2;
     background-color: white;
     width: 56vw;
     height: 100vh;
-    margin-left: 270px;
-    justify-content: center;
-    align-items: center;
+    overflow-y: auto;
 }
+
 #card-title{
     margin-top: 10px;
     font-size: xx-large;
     background-color: white;
+}
 
-}
-.contenido-datos-personales{
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-}
 #btn-agregar{
     background-color: rgb(220, 224, 245);
 }

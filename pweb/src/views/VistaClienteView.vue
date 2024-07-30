@@ -1,15 +1,20 @@
-<<<<<<< HEAD
 <script setup>
-import { ref } from 'vue';
+import { useProfileStore } from '@/stores/counter';
+import { computed, ref } from 'vue';
 import { RouterLink } from 'vue-router';
+
 
 const drawer = ref(true);
 const rail = ref(true);
+
+const store = useProfileStore()
+const nombreUsuario = computed(()=>store.title); // Computed para reflejar el estado reactivo
+
 </script>
 
 
 <template>
-  <div id="contenedor">
+  <div class="main-container">
     <v-card>
     <v-layout>
       <v-navigation-drawer
@@ -20,7 +25,7 @@ const rail = ref(true);
       >
         <v-list-item
           prepend-avatar="https://randomuser.me/api/portraits/men/85.jpg"
-          title="John Leider"
+          :title="nombreUsuario"
           nav
         >
           <template v-slot:append>
@@ -35,16 +40,17 @@ const rail = ref(true);
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
+          
           <router-link to="/VistaCliente/perfil">
-            <v-list-item prepend-icon="mdi-account-group-outline" title="Mi perfil" value="users"></v-list-item>
+            <v-list-item prepend-icon="mdi-account"  title="Mi perfil" value="users"></v-list-item>
           </router-link>
 
           <router-link to="/VistaCliente/MisVehiculos">
-            <v-list-item prepend-icon="mdi-home-city" title="Mis vehículos" value="home"></v-list-item>
+            <v-list-item prepend-icon="mdi-car" title="Mis vehículos" value="home"></v-list-item>
           </router-link>
 
           <router-link to="/VistaCliente/DetalleDeMisOrdenes">
-            <v-list-item prepend-icon="mdi-account" title="Detalles de mis ordenes" value="account"></v-list-item>
+            <v-list-item prepend-icon="mdi-folder-multiple" title="Detalles de mis ordenes" value="account"></v-list-item>
           </router-link>
 
         </v-list>
@@ -61,23 +67,13 @@ const rail = ref(true);
 </template>
 
 <style scoped>
+.main-container a {
+  text-decoration: none ;
+  color: inherit ;
+}
 .container-right{
   width: 100vw;
   height: 100vh;
   background-color: rgb(247, 249, 255);
 }
 </style>
-
-=======
-<template>
-  <h1>AQUI VA LA VISTA DE CLIENTES</h1>
-</template>
-
-<script>
-
-</script>
-
-<style>
-
-</style>
->>>>>>> 0a9462cf67b4e995cbcbe02f6b90c1a0e1a8e1b1
