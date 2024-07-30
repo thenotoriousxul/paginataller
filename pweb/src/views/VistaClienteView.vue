@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <script setup>
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
@@ -68,16 +68,5 @@ const rail = ref(true);
 }
 </style>
 
-=======
-<template>
-  <h1>AQUI VA LA VISTA DE CLIENTES</h1>
-</template>
 
-<script>
 
-</script>
-
-<style>
-
-</style>
->>>>>>> 0a9462cf67b4e995cbcbe02f6b90c1a0e1a8e1b1
