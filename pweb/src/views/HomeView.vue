@@ -12,7 +12,9 @@
         <div class="navegacion">
           <a class="navegacion__letras" href="#inicio">Inicio</a>
           <a class="navegacion__letras" href="#conocenos">Conocenos</a>
+          <a class="navegacion__letras" href="#citas">Citas</a>
           <a class="navegacion__letras" href="#contactanos">Contacto</a>
+
         </div>
 
       <div class="usuario">
@@ -93,6 +95,27 @@
 
 
 
+    <section class="cita">
+        <div class="cita__contenedor">
+          <div class="cita__contenedor--texto">
+            <h1 class="titulo-cita centrar-texto">Agenda Tu Cita</h1>
+            <p class="centrar-texto">Agenda una cita con Nosotros</p>
+            <p class="centrar-texto">Tenemos estos Horarios Disponibles:</p>
+            <p class="centrar-texto">De 3 p.m a 5 p.m</p>
+            <div class="contenedor-boton">
+            <a class="boton-agendar " href="#">Agendar Cita</a>
+          </div>
+          <p class="informacion-cita">Para poder hacer una cita tienes que tener un perfil creado en la pagina, si necesitas mas informacion por favor contactanos</p>
+        </div>
+
+        <div class="contenedor__imagen--cita">
+          <img src="@/img/imagen-taller.jpeg" alt="">
+        </div>
+
+      </div>
+      </section>
+
+
       <section class="contactos">
 
       <h1 class=" titulo-c centrar-texto"> Contacto</h1>
@@ -123,6 +146,7 @@
       </div>
     </div>
   </section>
+
 
 
   <footer class="footer">
@@ -375,6 +399,72 @@ color: white;
   color: white;
 }
 
+.cita{
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 
+.cita__contenedor{
+  background-color: #1A1A1A;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+
+}
+
+.titulo-cita{
+  padding-bottom: 20px;
+}
+
+.cita__contenedor--texto{
+  margin: 100px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding-left:30px ;
+
+}
+
+.contenedor__imagen--cita img{
+  height: 500px;
+}
+
+.contenedor__imagen--cita{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-left: 120px;
+}
+.contenedor-boton{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.boton-agendar{
+  margin: 120px;
+  text-decoration: none;
+  background-color: #413f3f;
+  color: white;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+.boton-agendar:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+
+  
+}
+
+.informacion-cita{
+  background-color: red;
+  font-size: 15px;
+  text-align: center;
+}
 </style>
 
