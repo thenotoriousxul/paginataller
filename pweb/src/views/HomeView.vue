@@ -3,21 +3,15 @@
   <header class="header">
 
     <div class="header__contenedor">
-
         <div class="contenedor__imagen" >
-          <a  href="#" > 
-          <v-img src="@/img/logo blanco.png"> </v-img>
-          <img  src="@/img/logo blanco.png" class="logo">
-        </a>
+          <v-img src="src/img/logo blanco.png" @click="clicklogo"> </v-img>
         </div>
         <div class="navegacion">
-          <a class="navegacion__letras" href="#inicio">Inicio</a>
-          <a class="navegacion__letras" href="#conocenos">Conocenos</a>
-          <a class="navegacion__letras" href="#citas">Citas</a>
-          <a class="navegacion__letras" href="#contactanos">Contacto</a>
-
+          <v-btn variant="plain" class="navegacion__letras" @click="clicklogo">Inicio</v-btn>
+          <v-btn variant="plain" class="navegacion__letras" @click="clickconocenos">Conocenos</v-btn>
+          <v-btn variant="plain" class="navegacion__letras" @click="clickcitas">Citas</v-btn>
+          <v-btn variant="plain" class="navegacion__letras" @click="clickcontacto">Contacto</v-btn>
         </div>
-
       <div class="usuario">
           <a  href="#" class="usuario__icon">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -27,13 +21,14 @@
                   </svg>
           </a>  
     </div>
-        
-    <div class="somos">
+  </div>
+
+  <div class="somos">
                 <h2>EN</h2>
                 <h2>DE LA ROSA MOTORS </h2>
                 <h2 >SOMOS TU MEJOR OPCIÓN</h2>
+                <h2>MEJOR OPCIÓN</h2>
               </div>
-  </div>
 </header>
   
   <main class="contenedor">
@@ -86,6 +81,8 @@
                 están al frente del negocio ofreciendo soluciones eficientes y manteniendo la misma atención al detalle que caracterizaba a su padre.
               </p>
         </div>
+
+       
 
         <div class="contenedor__imagenes_taller">
           <img class="imagen_taller" src="@/img/taller1.jpeg" alt="">
@@ -203,6 +200,11 @@
 
 
 /*Header*/
+.contenedor__imagen{
+  height: 90px;
+  margin:10px;
+  cursor: pointer;
+}
 
 .logo {
   height: 90px;
@@ -223,24 +225,28 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns:1fr 3fr 1fr ;
+    width: 100%;
     align-items: center;
-
+    background-color:#1A1A1A;
+    position: fixed;
+    transition: background-color 0.5s ease;
 
  }
+ 
  .navegacion {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 10px;
+
 }
  .navegacion__letras{
   text-align: center;
-  text-decoration: none;
   color: white;
   font-weight: 700;
   font-size: 20px;
-  border-radius: 10px;
   padding: 5px;
+  cursor: pointer;
  }
  .navegacion__letras:hover{
   cursor: pointer;
@@ -269,7 +275,7 @@
 @media (min-width: 768px) {
   .somos{
     color: white;
-  padding-top: 100px;
+  padding-top: 250px;
   padding-left: 50px;
     }
 }
@@ -331,6 +337,7 @@ padding-bottom: 20px;
   margin: 20px
 }
 
+
 .contenedor__imagenes_taller{
   padding-top: 40px;
   display: grid;
@@ -389,12 +396,8 @@ color: white;
 
 
 /*footer*/
-
-
-.contenedor__footer{
-  width: 100%;
-    width: 100%;
-  
+ .contenedor__footer{
+  width: 100%;  
   padding:30px;
   background-color: #1A1A1A;
   color: white;
@@ -468,3 +471,38 @@ padding-left: 120px;
   text-align: center;
 }
 </style>
+
+
+
+
+<script>
+export default {
+  methods: {
+    clicklogo() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    },
+    clickconocenos() {
+      window.scrollTo({
+        top: 1444,
+        behavior: 'smooth'
+      });
+    },
+    clickcitas() {
+      window.scrollTo({
+        top: 2646,
+        behavior: 'smooth'
+      });
+    },
+    clickcontacto() {
+      window.scrollTo({
+        top: 3330,
+        behavior: 'smooth'
+      });
+    }
+  }
+};
+
+</script>
