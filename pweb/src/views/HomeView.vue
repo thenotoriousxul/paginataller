@@ -4,9 +4,10 @@
 
     <div class="header__contenedor">
 
-        <div class="contenedor__imagen">
-          <a href="">
-          <img src="@/img/logo blanco.png" class="logo">
+        <div class="contenedor__imagen" >
+          <a  href="#" > 
+          <v-img src="@/img/logo blanco.png"> </v-img>
+          <img  src="@/img/logo blanco.png" class="logo">
         </a>
         </div>
         <div class="navegacion">
@@ -344,7 +345,7 @@ padding-bottom: 20px;
 
 
 .contactos{
-  padding-top: 120px;
+  padding-top: 50px;
   padding-bottom: 120px;
 }
 
@@ -467,4 +468,3 @@ padding-left: 120px;
   text-align: center;
 }
 </style>
-
