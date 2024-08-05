@@ -3,18 +3,15 @@
   <header class="header">
 
     <div class="header__contenedor">
-
-        <div class="contenedor__imagen">
-          <a href="">
-          <img src="@/img/logo blanco.png" class="logo">
-        </a>
+        <div class="contenedor__imagen" >
+          <v-img src="src/img/logo blanco.png" @click="clicklogo"> </v-img>
         </div>
         <div class="navegacion">
-          <a class="navegacion__letras" href="#inicio">Inicio</a>
-          <a class="navegacion__letras" href="#conocenos">Conocenos</a>
-          <a class="navegacion__letras" href="#contactanos">Contacto</a>
+          <v-btn variant="plain" class="navegacion__letras" @click="clicklogo">Inicio</v-btn>
+          <v-btn variant="plain" class="navegacion__letras" @click="clickconocenos">Conocenos</v-btn>
+          <v-btn variant="plain" class="navegacion__letras" @click="clickcitas">Citas</v-btn>
+          <v-btn variant="plain" class="navegacion__letras" @click="clickcontacto">Contacto</v-btn>
         </div>
-
       <div class="usuario">
           <a  href="#" class="usuario__icon">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -24,13 +21,14 @@
                   </svg>
           </a>  
     </div>
-        
-    <div class="somos">
+  </div>
+
+  <div class="somos">
                 <h2>EN</h2>
                 <h2>DE LA ROSA MOTORS </h2>
                 <h2 >SOMOS TU MEJOR OPCIÓN</h2>
+                <h2>MEJOR OPCIÓN</h2>
               </div>
-  </div>
 </header>
   
   <main class="contenedor">
@@ -84,6 +82,8 @@
               </p>
         </div>
 
+       
+
         <div class="contenedor__imagenes_taller">
           <img class="imagen_taller" src="@/img/taller1.jpeg" alt="">
           <img class="imagen_taller" src="@/img/taller2.jpeg" alt="">
@@ -91,6 +91,27 @@
             </div>
     </section>
 
+
+
+    <section class="cita">
+        <div class="cita__contenedor">
+          <div class="cita__contenedor--texto">
+            <h1 class="titulo-cita centrar-texto">Agenda Tu Cita</h1>
+            <p class="centrar-texto">Agenda una cita con Nosotros</p>
+            <p class="centrar-texto">Tenemos estos Horarios Disponibles:</p>
+            <p class="centrar-texto">De 3 p.m a 5 p.m</p>
+            <div class="contenedor-boton">
+            <a class="boton-agendar " href="#">Agendar Cita</a>
+          </div>
+          <p class="informacion-cita">Para poder hacer una cita tienes que tener un perfil creado en la pagina, si necesitas mas informacion por favor contactanos</p>
+        </div>
+
+        <div class="contenedor__imagen--cita">
+          <img src="@/img/imagen-taller.jpeg" alt="">
+        </div>
+
+      </div>
+      </section>
 
 
       <section class="contactos">
@@ -123,6 +144,7 @@
       </div>
     </div>
   </section>
+
 
 
   <footer class="footer">
@@ -178,6 +200,11 @@
 
 
 /*Header*/
+.contenedor__imagen{
+  height: 90px;
+  margin:10px;
+  cursor: pointer;
+}
 
 .logo {
   height: 90px;
@@ -198,24 +225,28 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns:1fr 3fr 1fr ;
+    width: 100%;
     align-items: center;
-
+    background-color:#1A1A1A;
+    position: fixed;
+    transition: background-color 0.5s ease;
 
  }
+ 
  .navegacion {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 10px;
+
 }
  .navegacion__letras{
   text-align: center;
-  text-decoration: none;
   color: white;
   font-weight: 700;
   font-size: 20px;
-  border-radius: 10px;
   padding: 5px;
+  cursor: pointer;
  }
  .navegacion__letras:hover{
   cursor: pointer;
@@ -244,7 +275,7 @@
 @media (min-width: 768px) {
   .somos{
     color: white;
-  padding-top: 100px;
+  padding-top: 250px;
   padding-left: 50px;
     }
 }
@@ -306,6 +337,7 @@ padding-bottom: 20px;
   margin: 20px
 }
 
+
 .contenedor__imagenes_taller{
   padding-top: 40px;
   display: grid;
@@ -320,7 +352,7 @@ padding-bottom: 20px;
 
 
 .contactos{
-  padding-top: 120px;
+  padding-top: 50px;
   padding-bottom: 120px;
 }
 
@@ -364,17 +396,113 @@ color: white;
 
 
 /*footer*/
-
-
-.contenedor__footer{
-  width: 100%;
-    width: 100%;
-  
+ .contenedor__footer{
+  width: 100%;  
   padding:30px;
   background-color: #1A1A1A;
   color: white;
 }
 
+.cita{
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 
+.cita__contenedor{
+  background-color: #1A1A1A;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+
+}
+
+.titulo-cita{
+  padding-bottom: 20px;
+}
+
+.cita__contenedor--texto{
+  margin: 100px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding-left:30px ;
+
+}
+
+.contenedor__imagen--cita img{
+  height: 500px;
+}
+
+.contenedor__imagen--cita{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-left: 120px;
+}
+.contenedor-boton{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.boton-agendar{
+  margin: 120px;
+  text-decoration: none;
+  background-color: #413f3f;
+  color: white;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+.boton-agendar:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+
+  
+}
+
+.informacion-cita{
+  background-color: red;
+  font-size: 15px;
+  text-align: center;
+}
 </style>
 
+
+
+
+<script>
+export default {
+  methods: {
+    clicklogo() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    },
+    clickconocenos() {
+      window.scrollTo({
+        top: 1444,
+        behavior: 'smooth'
+      });
+    },
+    clickcitas() {
+      window.scrollTo({
+        top: 2646,
+        behavior: 'smooth'
+      });
+    },
+    clickcontacto() {
+      window.scrollTo({
+        top: 3330,
+        behavior: 'smooth'
+      });
+    }
+  }
+};
+
+</script>

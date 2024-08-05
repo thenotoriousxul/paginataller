@@ -13,4 +13,13 @@ app.use(vuetify); // Usa Vuetify en tu aplicación
 app.use(createPinia());
 app.use(router);
 
-app.mount('#app');
+
+
+
+app.use(vuetify)
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')
+
+
