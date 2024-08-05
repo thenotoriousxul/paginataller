@@ -1,4 +1,21 @@
 <script setup>
+import { onMounted, ref } from 'vue';
+
+const datosVehicuos = ref([])
+
+const ShowAutos = () =>{
+    fetch('http://miproyecto.com/misVehiculos')
+    .then(response => response.json())
+    .then(json=>{
+        if(json.status === 200){
+            datosVehicuos.value = json.data
+        }
+    })
+}
+
+onMounted (() => {
+    ShowAutos()
+})
 
 </script>
 
@@ -13,7 +30,7 @@
 
                         <v-data-table-virtual
                         :headers="headers"
-                        :items="datos"
+                        :items="datosVehicuos"
                         height="400"
                         item-value="name"
                         ></v-data-table-virtual>

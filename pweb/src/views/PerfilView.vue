@@ -20,10 +20,13 @@ function Agregar() {
 
 <template>
     <div>
+        
         <div class="first-container">
+            
             <v-card class="card">  
                 <v-card-title id="card-title">Perfil</v-card-title>
-                <div>
+                            <v-divider></v-divider>
+
                     <v-col>
                         <v-row>
                             <v-col>
@@ -50,21 +53,16 @@ function Agregar() {
                             <v-col>
                                 <v-card-text >Tipo De Cliente</v-card-text>
                                 <v-select variant="solo" :items="tipoPersona" density="default" label="Persona" v-model="seleccionTipoPersona"> </v-select>                               
-                            
+                                
                                 <v-card-text v-if="seleccionTipoPersona === 'Moral'">Nombre De la Empresa</v-card-text>
-                                <v-text-field variant="solo" v-if="seleccionTipoPersona === 'Moral'" > </v-text-field>  
-                            </v-col>
-                        </v-row>
-
-                        <!-- btn -->
-                        <v-row>
-                            <v-col>
+                                <v-text-field variant="solo" v-if="seleccionTipoPersona === 'Moral'" > </v-text-field>
+                                
+                                
                                 <v-btn id="btn-agregar" @click="Agregar">Agregar</v-btn>
                             </v-col>
                         </v-row>
-                    </v-col>
 
-                </div>
+                    </v-col>
                 
             </v-card>
         </div>
@@ -93,5 +91,9 @@ function Agregar() {
 
 #btn-agregar{
     background-color: rgb(220, 224, 245);
+    transition: transform 0.2s ease; /* Transición suave */
+}
+#btn-agregar:hover {
+    transform: translateY(4px); /* Desplazamiento hacia arriba al pasar el ratón */
 }
 </style>

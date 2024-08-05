@@ -7,6 +7,8 @@ import MisVehiculosView from '@/views/MisVehiculosView.vue'
 import PerfilView from '@/views/PerfilView.vue'
 import DetalleDeMisOrdenesView from '@/views/DetalleDeMisOrdenesView.vue'
 
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -31,6 +33,7 @@ const router = createRouter({
     {
       path: '/VistaCliente',
       name: 'VistaCliente',
+      redirect: '/VistaCliente/perfil',
       component: VistaClienteView,
       children:[
         {
@@ -49,6 +52,9 @@ const router = createRouter({
           component: DetalleDeMisOrdenesView
         }
     ]
+
+
+
     }
   ]
 })
