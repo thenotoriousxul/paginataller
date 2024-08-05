@@ -96,11 +96,21 @@ const triggerFileInput = () => {
           </router-link>
 
         </v-list>
+        <v-list class="btn-home" density="compact" nav>
+          <router-link to="/">
+            <v-list-item prepend-icon="mdi-home  " title="Ir a Inicio" value="home"></v-list-item>
+          </router-link>
+
+        </v-list>
+       
+        
+
       </v-navigation-drawer>
 
       <v-main class="container-right">
         <router-view></router-view>
       </v-main>
+      
       
     </v-layout>
   </v-card>
@@ -206,5 +216,9 @@ const triggerFileInput = () => {
 }
 .btn-aceptar:hover{
   transform: translateY(4px);
+}
+.btn-home{
+  width: 100vw;
+  margin-top: 340px;
 }
 </style>
