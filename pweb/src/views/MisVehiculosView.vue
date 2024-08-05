@@ -24,6 +24,8 @@ onMounted (() => {
     <div id="container">
         <v-card class="card">
             <v-card-title id="card-title">Vehiculos</v-card-title>
+            <v-divider></v-divider>
+            <br>
             <v-col>
                 <v-row>
                     <v-col>

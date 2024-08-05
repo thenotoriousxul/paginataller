@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useProfileStore = defineStore('counter', () => {
+export const useProfileStore = defineStore('profile', () => {
   const title = ref('')
 
 
